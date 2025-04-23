@@ -1,0 +1,1 @@
+select b.stock_name, sum(quantity) as vol, count(distinct(user_id)), max(price) as highest_price from trades as a left join stocks as b on a.stock_id = b.id where a.trade_time >= '2024-03-01' a.trade_time < '2024-04-01' group by a.stock_id 
